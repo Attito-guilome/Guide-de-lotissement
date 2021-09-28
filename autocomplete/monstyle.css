@@ -1,0 +1,45 @@
+#list{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    width: 550px;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid black;
+  }
+  /*#autocomplete
+  {
+    height: 30px;
+    width: 300px;
+  }*/
+  #list
+  {
+    display: none;
+    max-height: 200px;
+    overflow: auto;
+  }
+  #list>li>a
+  {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+  }
+  #list>li:first-child
+  {
+    background-color: red;
+  }
+  #list>li{
+   
+  }
+  .exist:hover
+  {
+    background-color: gray;
+  }

@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #list{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    width: 300px;
+    border: 1px solid black;
+  }
+  #autocomplete
+  {
+    height: 30px;
+    width: 300px;
+  }
+  #list
+  {
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+  }
+  #list>li>a
+  {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+  }
+  #list>li:first-child
+  {
+    background-color: red;
+  }
+  #list>li{
+   
+  }
+  .exist:hover
+  {
+    background-color: gray;
+  }
+</style>
+<body>
+  <div>
+    <form action="#" autocomplete="off">
+      <label for="autocomplete">Entrer valeur</label><br/>
+      <input type="text" name="text" id="autocomplete">
+      <ul id="list">
+        <li><a href="#">Commencer a ecrire</a></li>
+      </ul>
+    </form>
+  </div>
+</body>
+<script src="ajax.js"></script>
+<script>
+  (function(){
+    var donne=document.querySelector('#autocomplete');
+    var list=document.querySelector('#list');
+    donne.addEventListener('input',function(e){
+    list.style.display='block';
+    ajax('POST','ajax.php',{valeu:'recuperer'},function(tableau){
+      tableau=JSON.parse(tableau);
+      var valeur='<li id="ajouter" ><a href="#" onclick="mario(this)">Ajouter la valeur saisie</a></li>';
+      for(var t in tableau)
+      {
+        var verif=false;
+        for(var i=0;i<e.target.value.length;i++)
+        {
+          var masc=e.target.value.toUpperCase();
+          if( masc[i]!=tableau[t][i])
+          {
+            verif=true;
+          }
+        }
+        if(verif==false)
+        {
+          valeur+='<li class="valeur" ><a href="#" class="exist" onclick="grimpeur(this)">'+tableau[t]+'</li>';
+        }
+      }
+      document.querySelector('#list').innerHTML=valeur;
+    });
+    
+     
+    },false);
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.querySelector('#list');
+      
+        if (elmnt != x && elmnt != donne) {
+        x.style.display="none";
+    } else if( elmnt == donne)
+        {
+          x.style.display="block";
+        }
+  }
+    document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+  })();
+
+  var ajout=document.querySelector('#ajouter');
+  function mario(valeur)
+  {
+    var don=document.querySelector('#autocomplete');
+    ajax('POST','ajax.php',{valeur:don.value.toUpperCase()},function(donne){});
+  }
+  function grimpeur(valeur)
+  {
+    var don=document.querySelector('#autocomplete');
+    // ajax('POST','ajax.php',{valeur:don.value},function(donne){});
+    don.value=valeur.textContent.toUpperCase();
+  }
+</script>
+</html>
