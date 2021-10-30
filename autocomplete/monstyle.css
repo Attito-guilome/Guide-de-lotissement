@@ -3,16 +3,12 @@
     padding: 0px;
     margin: 0px;
     position: absolute;
-    width: 550px;
+    width: 84%;
     z-index: 1000;
     background-color: white;
     border: 1px solid black;
   }
-  /*#autocomplete
-  {
-    height: 30px;
-    width: 300px;
-  }*/
+  
   #list
   {
     display: none;
@@ -42,4 +38,274 @@
   .exist:hover
   {
     background-color: gray;
+  }
+  #cacherr
+  {
+    display:none;
+  }
+  .lienne{
+    display: none;
+    right: 10px;
+    background-color: white;
+    width: 200px;
+    border: 1px solid rgba(128, 128, 128, 0.486);
+    padding: 5px 5px;
+    border-radius: 10px;
+  }
+  .liens
+  {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.822);
+
+    /* border: 1px solid black; */
+  }
+  .liens:hover{
+    background-color: rgba(128, 128, 128, 0.342);
+  }
+  #feremer:hover
+  {
+    cursor: pointer;
+  }
+  #afform{
+    display: none;
+  }
+  #afform:hover{
+    cursor: pointer;
+    
+  }
+  tr:hover{
+    background-color:rgba(128, 128, 128, 0.342);
+    box-shadow: 0 0 10px;
+    /* transform: scale(1.01); */
+}
+
+#gauche{
+  animation-duration: 0.3s;
+  animation-direction: reverse;
+}
+  
+  @keyframes slidein {
+    from {
+      width: 0px;
+    }
+  
+    to {
+      width: 400px;
+    }
+  }
+  
+
+  @media screen and (max-width:1050px)
+  {
+    #masquer
+    {
+      display: none;
+      background-color: red;
+    }
+    #cacherr
+    {
+      display: block;
+      
+    }
+    #cacherr:hover
+    {
+      cursor: pointer;
+      color: blue;
+      
+    }
+  }
+
+  body{
+    font-size: 18px;
+    background-color: rgba(199, 195, 195, 0.185);
+}
+.bg-red{
+    /* background-color: crimson; */
+    border-right: 1px solid black;
+}
+.bg-bleu{
+    background-color: rgb(160, 128, 134);
+}
+.container{
+    display: flex;
+}
+.item
+{
+    flex:1;
+}
+.position-fixed
+{
+    position: fixed;
+    top: 0;
+}
+.h-100
+{
+    height: 100vh;
+}
+.w-400px{
+    width: 400px;
+    box-sizing: border-box;
+}
+.m-l{
+    margin-left: 400px;
+}
+.menu{
+    /* background-color: cyan; */
+    background-color: white;
+    height: 100px;
+    padding: 5px 12px;
+    box-sizing: border-box;
+
+
+}
+.w-100{
+    width: 100%;
+}
+.cont{
+    margin-top: 80px;
+    padding: 5px 15px;
+    margin-left: 400px;
+    /* background:red; */
+
+    
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+
+}
+.enfant{
+    background-color:rgba(72, 22, 236, 0.87);
+    border-radius:5px;
+
+}
+.enfant:hover{
+  background-color:rgba(91, 19, 226, 0.856);
+  box-shadow:0 0 15px rgba(91, 19, 226, 0.856);
+}
+.flex-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.form
+{
+    display: flex;
+    background-color: darkorchid;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+}
+.f-100{
+    width: 100%;
+
+}
+.f-6{
+    width: 40%;
+    
+    background-color: darkseagreen;
+}
+.dis{
+    display: block;
+}
+.tableeau
+{
+    width: 100%;
+    text-align:center;
+    border:1px;
+
+}
+ table,th, td {
+  border: 1px solid rgb(119, 109, 109);
+  border-collapse: collapse;
+}
+th{
+    height: 50px;
+    background-color:rgb(31, 30, 30);
+    color:white;
+}
+td{
+    height: 50px;
+}
+
+input{
+  outline:none;
+  border:1px solid rgba(128, 128, 128, 0.486);
+}
+input:focus{
+  border:1px solid rgba(91, 19, 226, 0.856);
+  box-shadow: 0 0 10px rgba(91, 19, 226, 0.856);
+}
+
+.contenu{
+    /* background-color: darkseagreen; */
+    width: 100%;
+
+}
+.btn-success_
+{
+    padding:10px;
+    background-color:green;
+    border:1px;
+    color:white;
+    border-radius:5px;
+}
+.btn-danger_
+{
+    padding:10px;
+    background-color:red;
+    border:1px;
+    color:white;
+    border-radius:5px;
+}
+#valider
+{
+  border:1px solid rgba(128, 128, 128, 0.486);
+
+}
+#valider:hover
+{
+  background-color: green;
+  border:1px solid rgba(91, 19, 226, 0.856);
+
+}
+.active
+{
+  background-color: green;
+  border:1px solid rgba(91, 19, 226, 0.856);
+  box-shadow: inset 0 0 15px;
+  border:1px;
+}
+.home{
+    color:white;
+}
+  @media screen and (max-width:800px)
+  {
+    #gauche{
+      width: 100%;
+      border: none;
+
+    }
+    .contenu{
+      overflow: hidden;
+
+    }
+    @keyframes slidein{
+      from {
+        width: 0%;
+      }
+    
+      to {
+        width: 100%;
+      }
+    }
   }

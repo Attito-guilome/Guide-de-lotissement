@@ -70,7 +70,7 @@ if(isset($_POST['btn']) && $_POST['btn']=='btn_enr')
 	// piece
 	$piece= new piece('\N',$r2,' ',' ',' ');
 	$piece->e_piece();
-	header('Location:../saisirIlot.php');
+	header('Location:../guide.php');
 }
 if (isset($_POST['btn']) && $_POST['btn']=='btn_modif_guide')
 {
@@ -109,7 +109,7 @@ if(isset($_POST['btn']) && $_POST['btn']=='btn_mod')
 	//lot
 	$lot=new lot();
 	$lot->m_lot($id_lot,$deb_lot,$fin_lot);
-	header('Location:../voir_Lot.php?id_loti='.$id_loti.'&loti='.$loti.'');
+	header('Location:../guide.php?id_loti='.$id_loti.'&loti='.$loti.'');
 }
 if(@$ob->btn && $ob->btn=='attributaire')
 {
